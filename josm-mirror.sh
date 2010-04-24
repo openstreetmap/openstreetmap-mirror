@@ -5,6 +5,7 @@ cd ~/g/josm
 # Pull changes from JOSM's Subversion
 git checkout master 2>/dev/null
 git svn fetch       2>/dev/null
+git svn rebase      | grep -v 'Current branch master is up to date'
 
 # Merge them to the mirror branch
 git branch mirror    2>/dev/null
