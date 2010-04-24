@@ -26,7 +26,7 @@ git commit -m"josm-mirror: bumped externals" | grep -v -e '^nothing to commit' -
 
 # Evil revision hack
 perl -pi -e 's[<arg value="."/>][<arg value="http://josm.openstreetmap.de/svn/trunk"/>]g' build.xml
-git commit -m"josm-mirror: evil build.xml revision hack" build.xml | grep -v -e '^nothing to commit'
+git commit -m"josm-mirror: evil build.xml revision hack" build.xml | grep -v -e '^nothing to commit' -e '^# On branch mirror'
 
 # Push the mirror to GitHub
 git remote add github git@github.com:avar/josm.git 2>/dev/null
