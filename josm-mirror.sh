@@ -19,5 +19,3 @@ svn export --force http://svn.apache.org/repos/asf/commons/proper/codec/trunk/sr
 git add .
 git commit -m"Bumped externals"
 git push github mirror
- 
-
