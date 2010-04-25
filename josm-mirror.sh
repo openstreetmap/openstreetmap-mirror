@@ -5,17 +5,13 @@ cd ~/g/josm
 # Pull changes from JOSM's Subversion
 git checkout master 2>/dev/null
 git svn fetch       2>/dev/null
-git svn rebase      | grep -v 'Current branch master is up to date'
+git svn rebase      | grep -v -e 'Current branch master is up to date' -e 'creating empty directory'
 
 # Merge them to the mirror branch
 git branch mirror    2>/dev/null
 git checkout mirror  2>/dev/null
+git merge master | grep -v 'Already up-to-date'
 
-# Avoid merge commits, because I couldn't figure out how to make git
-# rebase --onto do what I want
-for i in $(git rev-list --reverse mirror..master); do
-    git cherry-pick $i
-done
 
 # Just do a plain copy of the externals into this repository.
 svn export --force http://svn.apache.org/repos/asf/ant/core/trunk/src/main/org/apache/tools/bzip2               src/org/apache/tools/bzip2   >/dev/null
