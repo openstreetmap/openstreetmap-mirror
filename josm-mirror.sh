@@ -10,7 +10,7 @@ git svn rebase      | grep -v -e 'Current branch master is up to date' -e 'creat
 # Merge them to the mirror branch
 git branch mirror    2>/dev/null
 git checkout mirror  2>/dev/null
-git merge master | grep -v 'Already up-to-date'
+git rebase master | grep -v 'Already up-to-date'
 
 
 # Just do a plain copy of the externals into this repository.
