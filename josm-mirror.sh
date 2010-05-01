@@ -35,7 +35,5 @@ git remote add github git@github.com:avar/josm.git 2>/dev/null
 git remote add osmhub git@github.com:openstreetmap/josm.git 2>/dev/null
 
 # Push to our mirrors
-git push osmhub master 2>&1 | grep -v 'Everything up-to-date'
-git push osmhub mirror 2>&1 | grep -v 'Everything up-to-date'
-git push github master 2>&1 | grep -v 'Everything up-to-date'
-git push github mirror 2>&1 | grep -v 'Everything up-to-date'
+git push mirror master 2>&1 | grep -v 'Everything up-to-date'
+git push mirror mirror 2>&1 | grep -v 'Everything up-to-date'
