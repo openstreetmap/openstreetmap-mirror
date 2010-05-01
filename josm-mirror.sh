@@ -21,7 +21,7 @@ svn export --force http://svn.apache.org/repos/asf/commons/proper/codec/trunk/sr
 
 # Commit externals changes, if any
 git config user.name "JOSM GitHub mirror"
-git config user.email "avarab@gmail.com"
+git config user.email "openstreetmap@v.nix.is"
 
 git add .
 git commit -m"josm-mirror: bumped externals" | grep -v -e '^nothing to commit' -e '^# On branch mirror'
