@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/g/$REPO_NAME
+cd /var/lib/openstreetmap-mirror/$REPO_NAME
 git pull         >/dev/null
 git fetch --tags >/dev/null
 

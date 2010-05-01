@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/g/josm
+cd /var/lib/openstreetmap-mirror/josm
 
 # Pull changes from JOSM's Subversion
 git checkout master 2>/dev/null
