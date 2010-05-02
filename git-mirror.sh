@@ -1,5 +1,7 @@
 #!/bin/bash
 
+REPO_NAME=$1
+
 cd /var/lib/openstreetmap-mirror/$REPO_NAME
 
 for branch in $(git branch -la | grep remotes/origin/ |grep -v -- '->' | sed 's/^  //'); do
