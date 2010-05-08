@@ -14,3 +14,5 @@ git remote add mirror git@github.com:openstreetmap/$REPO_NAME.git 2>/dev/null
 
 # Push to our mirrors
 git push mirror master 2>&1 | grep -v 'Everything up-to-date'
+
+exit 0

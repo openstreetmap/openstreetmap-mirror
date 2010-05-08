@@ -17,3 +17,5 @@ git checkout master 2>/dev/null
 
 git push mirror --all  >/dev/null 2>&1
 git push mirror --tags >/dev/null 2>&1
+
+exit 0
