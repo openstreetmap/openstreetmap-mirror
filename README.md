@@ -33,7 +33,7 @@ via the GitHub API so that this can be done trivially through a config
 file. I.e. just add something like:
 
     repository = gosmore
-    url = http://github.com/avar/linode-etc/commit/08fa1480b3d12fb4a599072e91a971244922643e
+    url = http://svn.openstreetmap.org/applications/rendering/gosmore
     
 To a config file. Then the some job would read that, `git svn clone`
 if it doesn't exist already, otherwise just update it and push.
