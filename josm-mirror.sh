@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Changes already pulled, merge them to the mirror branch
-git branch mirror
+git branch mirror || :
 git checkout mirror
 git merge master
 
@@ -16,11 +16,11 @@ git config user.name "JOSM GitHub mirror"
 git config user.email "openstreetmap@v.nix.is"
 
 git add .
-git commit -m"josm-mirror: bumped externals"
+git commit -m"josm-mirror: bumped externals" || :
 
 # Evil revision hack
 perl -pi -e 's[<arg value="."/>][<arg value="http://josm.openstreetmap.de/svn/trunk"/>]g' build.xml
-git commit -m"josm-mirror: evil build.xml revision hack" build.xml
+git commit -m"josm-mirror: evil build.xml revision hack" build.xml || :
 
 # Push the mirror to GitHub
 git remote add mirror git@github.com:openstreetmap/josm.git || :
