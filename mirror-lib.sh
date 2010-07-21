@@ -16,4 +16,4 @@ fail () {
     exit 1
 }
 
-cd /var/lib/openstreetmap-mirror
+cd ~/mirrors
