@@ -1,0 +1,23 @@
+# OpenStreetMap mirrors
+
+PATH=/home/v-perlbrew/perl5/perlbrew/bin:/home/v-perlbrew/perl5/perlbrew/perls/current/bin:/bin:/usr/bin
+
+# JOSM is a special case
+#*/30 * * * * osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j josm -c '~/g/openstreetmap-mirror/josm-mirror.sh'
+
+# Git repositories
+*/10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j openstreetmap-website -c '/etc/openstreetmap-mirror/git-mirror.sh openstreetmap-website git://git.openstreetmap.org/rails.git git@github.com:openstreetmap/openstreetmap-website.git'
+0 */2 * * *   osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j merkaartor            -c '/etc/openstreetmap-mirror/git-mirror.sh merkaartor git://gitorious.org/merkaartor/main.git git@github.com:openstreetmap/merkaartor.git'
+
+# git-svn mirrors
+# 0  */2 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j potlatch2    -c '~/g/openstreetmap-mirror/svn-mirror.sh potlatch2'
+# 5  */2 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j tirex        -c '~/g/openstreetmap-mirror/svn-mirror.sh tirex'
+# 10 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j potlatch     -c '~/g/openstreetmap-mirror/svn-mirror.sh potlatch'
+# 15 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j mapnik       -c '~/g/openstreetmap-mirror/svn-mirror.sh mapnik'
+# 20 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j shp2osm      -c '~/g/openstreetmap-mirror/svn-mirror.sh shp2osm  '
+# 25 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j mod-tile     -c '~/g/openstreetmap-mirror/svn-mirror.sh mod_tile '
+# 35 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j josm-plugins -c '~/g/openstreetmap-mirror/svn-mirror.sh josm-plugins'
+# 40 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j map-icons    -c '~/g/openstreetmap-mirror/svn-mirror.sh map-icons'
+# 45 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j gosmore      -c '~/g/openstreetmap-mirror/svn-mirror.sh gosmore'
+# 50 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j osm2pgsql    -c '~/g/openstreetmap-mirror/svn-mirror.sh osm2pgsql'
+# 55 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j mkgmap       -c '~/g/openstreetmap-mirror/svn-mirror.sh mkgmap'
