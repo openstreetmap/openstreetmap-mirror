@@ -26,4 +26,9 @@ git svn rebase
 git remote add mirror $REPO_TO || :
 
 # Push to our mirrors
-git push mirror master
+if test -z "$DO_JOSM"
+then
+    git push mirror master
+else
+    . "$SCRIPTPATH"/josm-mirror.sh
+fi

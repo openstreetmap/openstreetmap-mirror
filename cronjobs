@@ -3,7 +3,7 @@
 PATH=/home/v-perlbrew/perl5/perlbrew/bin:/home/v-perlbrew/perl5/perlbrew/perls/current/bin:/bin:/usr/bin
 
 # JOSM is a special case
-#*/30 * * * * osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j josm -c '~/g/openstreetmap-mirror/josm-mirror.sh'
+#*/30 * * * * osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j josm -c 'DO_JOSM=1 /etc/openstreetmap-mirror/svn-mirror.sh josm http://josm.openstreetmap.de/svn/trunk git@github.com:openstreetmap/josm.git'
 
 # Git repositories
 */10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -j openstreetmap-website -c '/etc/openstreetmap-mirror/git-mirror.sh openstreetmap-website git://git.openstreetmap.org/rails.git git@github.com:openstreetmap/openstreetmap-website.git'
