@@ -1,21 +1,30 @@
 #!/bin/bash
 
 REPO_NAME=$1
+REPO_FROM=$2
+REPO_TO=$3
 
-cd /var/lib/openstreetmap-mirror/$REPO_NAME
+echo "Mirroring $REPO_NAME from $REPO_FROM to $REPO_TO"
 
-for branch in $(git branch -la | grep remotes/origin/ |grep -v -- '->' | sed 's/^  //'); do
-    local_branch=$(echo $branch | perl -pe 's[^remotes/origin/][]')
+# Exit on errors
+trap 'fail' ERR
+fail () {
+    code=$?
+    echo "Failed with exit code $code"
+    exit 1
+}
 
-    git checkout -b $local_branch $branch 2>/dev/null
-    git checkout $local_branch            2>/dev/null
-    git pull                              >/dev/null
-done
+cd /var/lib/openstreetmap-mirror
 
-git fetch --tags >/dev/null
-git checkout master 2>/dev/null
+if ! test -d $REPO_NAME
+then
+    git clone --bare $REPO_FROM $REPO_NAME
+    cd $REPO_NAME
+    git remote add origin $REPO_FROM
+    git remote add mirror $REPO_TO
+else
+    cd $REPO_NAME
+fi
 
-git push mirror --all  >/dev/null 2>&1
-git push mirror --tags >/dev/null 2>&1
-
-exit 0
+git fetch
+git push -f mirror refs/remotes/origin/*:refs/heads/*
