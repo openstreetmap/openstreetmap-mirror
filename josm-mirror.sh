@@ -26,5 +26,5 @@ git commit -m"josm-mirror: evil build.xml revision hack" build.xml || :
 git remote add mirror git@github.com:openstreetmap/josm.git || :
 
 # Push to our mirrors
-git push mirror master
-git push mirror mirror
+git push -v mirror master
+git push -v mirror mirror
