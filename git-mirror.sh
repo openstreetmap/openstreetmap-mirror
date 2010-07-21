@@ -8,6 +8,7 @@ REPO_TO=$3
 SCRIPT=$(readlink -f $0)
 SCRIPTPATH=$(dirname $SCRIPT)
 . "$SCRIPTPATH"/mirror-lib.sh
+check_args
 
 if ! test -d $REPO_NAME
 then
