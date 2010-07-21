@@ -1,18 +1,28 @@
-#!/bin/bash
+#!/bin/bash -e
 
 REPO_NAME=$1
+REPO_FROM=$2
+REPO_TO=$3
 
-cd /var/lib/openstreetmap-mirror/$REPO_NAME
+# Include mirroring library routines
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=$(dirname $SCRIPT)
+. "$SCRIPTPATH"/mirror-lib.sh
+
+if ! test -d $REPO_NAME
+then
+    git svn clone $REPO_FROM $REPO_NAME
+fi
+
+cd $REPO_NAME
 
 # Pull changes from Subversion
-git checkout master 2>/dev/null
-git svn fetch       2>/dev/null
-git svn rebase      | grep -v -e 'Current branch master is up to date' -e 'creating empty directory'
+git checkout master
+git svn fetch
+git svn rebase
 
 # Push the mirror to GitHub
-git remote add mirror git@github.com:openstreetmap/$REPO_NAME.git 2>/dev/null
+git remote add mirror $REPO_TO || :
 
 # Push to our mirrors
-git push mirror master 2>&1 | grep -v 'Everything up-to-date'
-
-exit 0
+git push mirror master
