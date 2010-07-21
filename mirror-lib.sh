@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -e
 
 check_args() {
     if test -z "$REPO_NAME" || test -z "$REPO_FROM" || test -z "$REPO_TO"
