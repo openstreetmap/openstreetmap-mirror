@@ -4,7 +4,10 @@ REPO_NAME=$1
 REPO_FROM=$2
 REPO_TO=$3
 
-. "$MIRROR_LIBDIR"/mirror-lib.sh
+# Include mirroring library routines
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=$(dirname $SCRIPT)
+. "$SCRIPTPATH"/mirror-lib.sh
 
 if ! test -d $REPO_NAME
 then
