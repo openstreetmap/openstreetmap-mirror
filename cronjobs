@@ -12,6 +12,7 @@ PATH=/home/v-perlbrew/perl5/perlbrew/bin:/home/v-perlbrew/perl5/perlbrew/perls/c
 */30 * * * * osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j josm -c 'DO_JOSM=1 /etc/openstreetmap-mirror/svn-mirror.sh josm http://josm.openstreetmap.de/svn/trunk git@github.com:openstreetmap/josm.git'
 
 # git-svn mirrors
+*/10  * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j potlatch     -c '/etc/openstreetmap-mirror/svn-mirror.sh osrm https://svn.project-osrm.org/svnroot/routed/osrm git@github.com:openstreetmap/osrm.git'
 10 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j potlatch     -c '/etc/openstreetmap-mirror/svn-mirror.sh potlatch http://svn.openstreetmap.org/applications/editors/potlatch git@github.com:openstreetmap/potlatch.git'
 15 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j mapnik       -c '/etc/openstreetmap-mirror/svn-mirror.sh mapnik-stylesheets http://svn.openstreetmap.org/applications/rendering/mapnik git@github.com:openstreetmap/mapnik-stylesheets.git'
 20 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j shp2osm      -c '/etc/openstreetmap-mirror/svn-mirror.sh shp2osm http://svn.openstreetmap.org/applications/utils/import/shp2osm git@github.com:openstreetmap/shp2osm.git'
