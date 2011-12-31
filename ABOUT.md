@@ -18,7 +18,7 @@ General information about
    [avar](https://github.com/avar) who can create repositories for
    you, as well as creating a team for your project and make you the
    admin of that team.
-
+   
    After that's set up you'll be able to do all the maintenance of
    your repository (e.g. adding users to it) yourself just as you
    would with a regular GitHub repository.
