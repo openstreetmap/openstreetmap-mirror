@@ -17,12 +17,10 @@ General information about
    either [bastik](https://github.com/bastik) or
    [avar](https://github.com/avar) who can create repositories for
    you, as well as creating a team for your project and make you the
-   admin of that team.
-   
+   admin of that team.<br><br>
    After that's set up you'll be able to do all the maintenance of
    your repository (e.g. adding users to it) yourself just as you
-   would with a regular GitHub repository.
-   
+   would with a regular GitHub repository.<br><br>
    You can of course just host an OpenStreetMap-related project under
    your own user account, but the advange of setting it up under this
    organization is that it'll have higher visibility to people
