@@ -12,7 +12,7 @@ check_args
 
 if ! test -d $REPO_NAME
 then
-    git svn clone $REPO_FROM $REPO_NAME
+    git svn clone $GIT_SVN_CLONE_ARGS $REPO_FROM $REPO_NAME
 fi
 
 cd $REPO_NAME
@@ -28,7 +28,7 @@ git remote add mirror $REPO_TO || :
 # Push to our mirrors
 if test -z "$DO_JOSM"
 then
-    git push mirror master
+    git push mirror refs/remotes/*:refs/heads/* refs/heads/*:refs/heads/*
 else
     . "$SCRIPTPATH"/josm-mirror.sh
 fi
