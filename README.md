@@ -1,19 +1,18 @@
-A script to maintain the various repositories mirrored at [the
-OpenStreetMap mirror](http://github.com/openstreetmap) on GitHub.
+This repository contains scripts and cronjobs to maintain the various
+repositories mirrored at
+[the OpenStreetMap mirror](http://github.com/openstreetmap) on GitHub.
 
-# How
+# How to set this up on a new server
 
-The setup, an osm-mirror using
-[is running](http://github.com/avar/linode-etc/commit/47128b2f1ce7b3cc77aacb8485f6d459082973a5)
-on v.nix.is:
+The osm-mirror scripts run on w.nix.is. To set it up again do:
 
     sudo adduser --disabled-login --disabled-password osm-mirror
 
-It runs
-[these cronjobs](http://github.com/avar/linode-etc/blob/master/cron.d/openstreetmap-github-mirror)
+Which'll run
+[these cronjobs](http://github.com/openstreetmap/openstreetmap-mirror)
 to mirror the repositories.
 
-The `.gitconfig`:
+The `.gitconfig` for the user:
     
     $ perl -pe 's/token = \K.*/seekrt/' ~osm-mirror/.gitconfig
     [github]
