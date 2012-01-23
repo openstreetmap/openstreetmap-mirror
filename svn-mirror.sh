@@ -28,7 +28,7 @@ git remote add mirror $REPO_TO || :
 # Push to our mirrors
 if test -z "$DO_JOSM"
 then
-    git push mirror refs/remotes/*:refs/heads/* refs/heads/*:refs/heads/*
+    git push mirror master
 else
     . "$SCRIPTPATH"/josm-mirror.sh
 fi
