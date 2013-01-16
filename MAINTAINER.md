@@ -42,3 +42,4 @@ file. I.e. just add something like:
     Homepage URL: http://svn.openstreetmap.org/applications/rendering/gosmore
 
 Then set up a cronjob for it, see the `cronjobs` file for examples.
+foo
