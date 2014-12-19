@@ -18,6 +18,7 @@ fi
 cd $REPO_NAME
 git remote add origin $REPO_FROM || :
 git remote add mirror $REPO_TO   || :
+git config --bool remote.mirror.mirror true || ::
 
-git fetch
-git push -f mirror refs/remotes/origin/*:refs/heads/*
+git fetch --all
+git push mirror
