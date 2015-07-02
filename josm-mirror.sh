@@ -5,11 +5,14 @@ git branch mirror || :
 git checkout mirror
 git merge master
 
-# Just do a plain copy of the externals into this repository.
-svn export --force http://svn.apache.org/repos/asf/ant/core/trunk/src/main/org/apache/tools/bzip2                    src/org/apache/tools/bzip2   >/dev/null
-svn export --force http://svn.openstreetmap.org/applications/viewer/jmapviewer/src/org/openstreetmap/gui             src/org/openstreetmap/gui    >/dev/null
-svn export --force http://svn.openstreetmap.org/applications/share/map-icons/classic.small                           images/styles/standard       >/dev/null
-svn export --force http://svn.apache.org/repos/asf/commons/proper/codec/trunk/src/main/java/org/apache/commons/codec src/org/apache/commons/codec >/dev/null
+# Just do a plain copy of the externals into this repository. Get the
+# current list with a "svn checkout" and:
+#
+#    svn propget svn:externals -R
+#
+# The format is sort of bizarre and inconsistent, but these two
+# regexes seem to capture the external we need to clone.
+git svn show-externals | grep ^/ | perl -pe 's[^/([^ ]+) (http[^ \n]+)$][svn export --force $2 $1]m; s[^/([^ ]+?)/(http[^ ]+) ([^ ]+)$][svn export --force $2 $1/$3]' | sh
 
 # Commit externals changes, if any
 git config user.name "JOSM GitHub mirror"
