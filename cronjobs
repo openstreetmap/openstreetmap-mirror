@@ -6,7 +6,9 @@ PATH=/home/v-perlbrew/perl5/perlbrew/bin:/home/v-perlbrew/perl5/perlbrew/perls/c
 */10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j openstreetmap-website -c '/etc/openstreetmap-mirror/git-mirror.sh openstreetmap-website git://git.openstreetmap.org/rails.git git@github.com:openstreetmap/openstreetmap-website.git'
 */10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j potlatch2 -c '/etc/openstreetmap-mirror/git-mirror.sh potlatch2 git://git.openstreetmap.org/potlatch2.git git@github.com:openstreetmap/potlatch2.git'
 */10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j chef -c '/etc/openstreetmap-mirror/git-mirror.sh chef git://git.openstreetmap.org/chef.git git@github.com:openstreetmap/chef.git'
-0 */2 * * *   osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j cgimap                -c '/etc/openstreetmap-mirror/git-mirror.sh cgimap git://git.openstreetmap.org/cgimap.git git@github.com:openstreetmap/cgimap.git'
+0 */2 * * *   osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j cgimap -c '/etc/openstreetmap-mirror/git-mirror.sh cgimap git://git.openstreetmap.org/cgimap.git git@github.com:openstreetmap/cgimap.git'
+5  */2 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j tirex -c '/etc/openstreetmap-mirror/git-mirror.sh tirex https://github.com/geofabrik/tirex.git git@github.com:openstreetmap/tirex.git'
+
 ## Disabled on request of https://github.com/Krakonos
 #2 */2 * * *   osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j merkaartor            -c '/etc/openstreetmap-mirror/git-mirror.sh merkaartor git://gitorious.org/merkaartor/main.git git@github.com:openstreetmap/merkaartor.git'
 
@@ -20,6 +22,5 @@ PATH=/home/v-perlbrew/perl5/perlbrew/bin:/home/v-perlbrew/perl5/perlbrew/perls/c
 35 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j josm-plugins -c '/etc/openstreetmap-mirror/svn-mirror.sh josm-plugins http://svn.openstreetmap.org/applications/editors/josm/plugins git@github.com:openstreetmap/josm-plugins.git'
 40 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j map-icons    -c '/etc/openstreetmap-mirror/svn-mirror.sh map-icons http://svn.openstreetmap.org/applications/share/map-icons git@github.com:openstreetmap/map-icons.git'
 45 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j gosmore      -c '/etc/openstreetmap-mirror/svn-mirror.sh gosmore http://svn.openstreetmap.org/applications/rendering/gosmore git@github.com:openstreetmap/gosmore.git'
-5  */2 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j tirex        -c '/etc/openstreetmap-mirror/svn-mirror.sh tirex http://svn.openstreetmap.org/applications/utils/tirex git@github.com:openstreetmap/tirex.git'
 55 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j mkgmap       -c 'GIT_SVN_CLONE_ARGS=--stdlayout /etc/openstreetmap-mirror/svn-mirror.sh mkgmap http://svn.mkgmap.org.uk/mkgmap git@github.com:openstreetmap/mkgmap.git'
 55 */4 * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j splitter       -c 'GIT_SVN_CLONE_ARGS=--stdlayout /etc/openstreetmap-mirror/svn-mirror.sh splitter http://svn.mkgmap.org.uk/splitter git@github.com:openstreetmap/splitter.git'
