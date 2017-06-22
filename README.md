@@ -12,7 +12,7 @@ information:
  * A remote URL for the repository, if it's different from the clone
    URL. This is whatever you want to have in the URL bit in the
    repository description, see e.g. the
-   [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website)
+   [potlatch2](https://github.com/openstreetmap/potlatch2)
    repository for an example.
  * For Subversion repositories whether you'd like branches to be
    cloned as well. More specifically we can clone the repository with

@@ -3,7 +3,6 @@
 PATH=/home/v-perlbrew/perl5/perlbrew/bin:/home/v-perlbrew/perl5/perlbrew/perls/current/bin:/bin:/usr/bin
 
 # Git repositories
-*/10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j openstreetmap-website -c '/etc/openstreetmap-mirror/git-mirror.sh openstreetmap-website git://git.openstreetmap.org/rails.git git@github.com:openstreetmap/openstreetmap-website.git'
 */10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j potlatch2 -c '/etc/openstreetmap-mirror/git-mirror.sh potlatch2 git://git.openstreetmap.org/potlatch2.git git@github.com:openstreetmap/potlatch2.git'
 */10 * * * *  osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j chef -c '/etc/openstreetmap-mirror/git-mirror.sh chef git://git.openstreetmap.org/chef.git git@github.com:openstreetmap/chef.git'
 0 */2 * * *   osm-mirror nice -n 15 ionice -c 2 -n 6 cronjob -E -r osm-mirror -j cgimap -c '/etc/openstreetmap-mirror/git-mirror.sh cgimap git://git.openstreetmap.org/cgimap.git git@github.com:openstreetmap/cgimap.git'

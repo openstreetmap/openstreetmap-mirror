@@ -5,7 +5,7 @@ General information about
    repositories
    (e.g. [osmosis](https://github.com/openstreetmap/osmosis)), mirrors
    of other Git repositories
-   (e.g. [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website)),
+   (e.g. [potlatch2](https://github.com/openstreetmap/potlatch2)),
    and mirrors of Subversion repositories
    (e.g. [JOSM](https://github.com/openstreetmap/josm)).
    
