@@ -22,6 +22,6 @@ General information about
    your repository (e.g. adding users to it) yourself just as you
    would with a regular GitHub repository.<br><br>
    You can of course just host an OpenStreetMap-related project under
-   your own user account, but the advange of setting it up under this
+   your own user account, but the advantage of setting it up under this
    organization is that it'll have higher visibility to people
    browsing related projects.
